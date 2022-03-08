@@ -2,15 +2,16 @@ package com.example.RocketsFase1WithMaven;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rocket {
     private final String code;
-    private final int numOfPropellant;
+    private final List<Propellant> propellantList = new ArrayList<>();
 
-    public Rocket(@JsonProperty("code") String code,@JsonProperty("numOfPropellant") int numOfPropellant) throws Exception {
+    public Rocket(@JsonProperty("code") String code) throws Exception {
         checkCode(code);
-        checkPropellant(numOfPropellant);
         this.code = code;
-        this.numOfPropellant = numOfPropellant;
     }
 
     private void checkPropellant(int numOfPropellant) throws Exception{
@@ -25,7 +26,10 @@ public class Rocket {
         return code;
     }
 
-    public int getNumOfPropellant() {
-        return numOfPropellant;
+    public List<Propellant> getNumOfPropellant() {
+        return propellantList;
+    }
+    public void addPropellant(Propellant newPropellant) {
+        this.propellantList.add(newPropellant);
     }
 }

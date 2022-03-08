@@ -13,4 +13,7 @@ public class RocketService {
     public List<Rocket> showAll(){
         return rockets;
     }
+    public void addPropellant(Propellant propellant){
+
+    }
 }
