@@ -26,7 +26,7 @@ public class Rocket {
         return code;
     }
 
-    public List<Propellant> getNumOfPropellant() {
+    public List<Propellant> getPropellant() {
         return propellantList;
     }
     public void addPropellant(Propellant newPropellant) {

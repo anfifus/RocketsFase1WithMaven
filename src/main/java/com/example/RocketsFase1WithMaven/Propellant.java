@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Propellant {
     private final int maxPower;
 
-    public Propellant(@JsonProperty("numOfPropellant")int maxPower) throws Exception {
+    public Propellant(@JsonProperty("maxPower")int maxPower) throws Exception {
         checkPower(maxPower);
         this.maxPower = maxPower;
     }
