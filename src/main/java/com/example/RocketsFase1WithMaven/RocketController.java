@@ -8,12 +8,12 @@ import java.util.List;
 @RestController
 public class RocketController {
     private final RocketService rocketService = new RocketService();
-    @GetMapping("/addRockets")
+    @PosttMapping("/rockets")
     public Rocket createRocket(@RequestBody Rocket newRocket){
         rocketService.addRocket(newRocket);
         return newRocket;
     }
-    @GetMapping("/showAll")
+    @GetMapping("/rockets")
     public List<Rocket> showRockets(){
         List<Rocket> rocketList = new ArrayList<>();
         try
@@ -25,7 +25,7 @@ public class RocketController {
         }
         return rocketList;
     }
-    @GetMapping("/addPropellants/Rockets/{code}")
+    @PostMapping("/rockets/{code}/propellant")
     public Rocket addPropellantInRocket(@PathVariable String code,@RequestBody Propellant newPropellant){
         Rocket rocketWithNewPropellant;
         rocketWithNewPropellant = rocketService.addPropellant(code,newPropellant);
